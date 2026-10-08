@@ -1,0 +1,78 @@
+---
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { useTranslations, type Lang } from '../i18n/ui';
+import { site } from '../data/site';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const next = `${getAbsoluteLocaleUrl(lang, '')}?sent=1#contact`;
+---
+<section class="section" id="contact">
+  <div class="container grid">
+    <div>
+      <div class="section-head">
+        <span class="kicker">{t('nav.contact')}</span>
+        <h2>{t('contact.title')}</h2>
+        <p>{t('contact.lead')}</p>
+      </div>
+      <form class="form" action={site.formAction} method="POST">
+        <input type="hidden" name="_next" value={next} />
+        <input type="hidden" name="_language" value={lang} />
+        <input type="hidden" name="_subject" value={`${site.name} – ${t('contact.title')}`} />
+        <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label><span>{t('contact.name')}</span><input type="text" name="name" required autocomplete="name" /></label>
+        <label><span>{t('contact.email')}</span><input type="email" name="email" required autocomplete="email" /></label>
+        <label><span>{t('contact.phone')}</span><input type="tel" name="phone" autocomplete="tel" /></label>
+        <label><span>{t('contact.message')}</span><textarea name="message" rows="5" required></textarea></label>
+        <p class="sent" hidden>✓</p>
+        <button class="btn btn-primary" type="submit">{t('contact.send')}</button>
+      </form>
+    </div>
+    <aside class="info">
+      <img src="/logo.svg" alt="" width="64" height="64" />
+      <dl>
+        <dt>{t('contact.address')}</dt>
+        <dd>{site.owner}<br />{site.address.map((l) => <>{l}<br /></>)}</dd>
+        <dt>{t('contact.phoneLabel')}</dt>
+        <dd><a href={site.phoneHref}>{site.phone}</a></dd>
+        <dt>{t('contact.emailLabel')}</dt>
+        <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+        <dt>{t('contact.hours')}</dt>
+        <dd>{site.hours[lang]}</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .form { display: grid; gap: 1rem; }
+  label { display: grid; gap: .35rem; font-weight: 500; font-size: .95rem; }
+  input, textarea { font: inherit; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); width: 100%; }
+  input:focus, textarea:focus { border-color: var(--brand); outline: none; box-shadow: 0 0 0 3px rgb(211 134 32 / .2); }
+  textarea { resize: vertical; }
+  .form .btn { justify-self: start; }
+  .sent { padding: .9rem 1rem; border-radius: 12px; background: #e6f4ea; color: #1e6b3a; font-weight: 600; }
+  .info { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem; position: sticky; top: 96px; }
+  .info img { margin-bottom: 1.25rem; }
+  dl { margin: 0; display: grid; gap: .25rem 0; }
+  dt { font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; margin-top: 1rem; }
+  dd { margin: 0; line-height: 1.7; }
+  dd a { text-decoration: none; font-weight: 600; color: var(--brand-dark); }
+  dd a:hover { text-decoration: underline; }
+  @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .info { position: static; } }
+</style>
+
+<script>
+  // Show a confirmation after Formspree redirects back with ?sent=1
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    const msg = document.querySelector<HTMLElement>('.sent');
+    if (msg) {
+      const by = document.documentElement.lang;
+      msg.textContent =
+        { fr: 'Merci ! Votre message a bien été envoyé.', en: 'Thank you! Your message has been sent.', de: 'Danke! Ihre Nachricht wurde gesendet.', it: 'Grazie! Il vostro messaggio è stato inviato.' }[by] ?? 'Thank you!';
+      msg.hidden = false;
+      history.replaceState(null, '', location.pathname + '#contact');
+    }
+  }
+</script>

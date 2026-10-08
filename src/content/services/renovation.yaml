@@ -1,0 +1,34 @@
+order: 2
+images:
+  - src: ../../assets/services/renovation_2.jpg
+  - src: ../../assets/services/renovation_1.jpg
+  - src: ../../assets/services/renovation_3.jpg
+fr:
+  title: Rénovation
+  summary: Conseil et coordination avec nos partenaires indépendants.
+  description: >-
+    Avec nos années d'expérience dans le bâtiment, nous sommes en mesure de vous conseiller pour la
+    rénovation de pièces dans votre logement. Nous travaillons avec différentes entreprises
+    partenaires indépendantes, dans différents domaines de compétences (sanitaire, plâtrier,
+    peintre, parqueteur, électricien, etc.).
+en:
+  title: Renovation
+  summary: Advice and coordination with our independent partners.
+  description: >-
+    With our years of experience in construction, we can advise you on renovating rooms in your
+    home. We work with several independent partner companies across different trades (plumbing,
+    plastering, painting, parquet flooring, electrical work, etc.).
+de:
+  title: Renovation
+  summary: Beratung und Koordination mit unseren unabhängigen Partnern.
+  description: >-
+    Dank unserer langjährigen Erfahrung im Bauwesen beraten wir Sie bei der Renovation von Räumen in
+    Ihrem Zuhause. Wir arbeiten mit verschiedenen unabhängigen Partnerfirmen aus unterschiedlichen
+    Fachbereichen zusammen (Sanitär, Gipser, Maler, Parkettleger, Elektriker usw.).
+it:
+  title: Ristrutturazione
+  summary: Consulenza e coordinamento con i nostri partner indipendenti.
+  description: >-
+    Con i nostri anni di esperienza nell'edilizia siamo in grado di consigliarvi per la
+    ristrutturazione delle stanze della vostra abitazione. Collaboriamo con diverse imprese partner
+    indipendenti in vari settori (sanitari, gessatore, pittore, parchettista, elettricista, ecc.).

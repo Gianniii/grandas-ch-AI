@@ -1,0 +1,28 @@
+order: 4
+images:
+  - src: ../../assets/services/petite_demolition_1.jpg
+fr:
+  title: Petites démolitions
+  summary: Arrachage de revêtements et démolition de cloisons.
+  description: >-
+    Dans le cadre de rénovations, nous pouvons faire de la petite démolition telle que l'arrachage
+    de moquette, parquet, lino, carrelage, démolition de cloison, cuisine, mur non porteur, etc.
+en:
+  title: Small demolition works
+  summary: Removal of floor coverings and non-load-bearing walls.
+  description: >-
+    As part of a renovation, we carry out small demolition works such as removing carpet, parquet,
+    lino or tiles, and demolishing partitions, kitchens, non-load-bearing walls, etc.
+de:
+  title: Kleine Abbrucharbeiten
+  summary: Entfernen von Bodenbelägen und nichttragenden Wänden.
+  description: >-
+    Im Rahmen von Renovationen führen wir kleine Abbrucharbeiten aus, z. B. das Entfernen von
+    Teppich, Parkett, Linoleum oder Platten sowie den Abbruch von Trennwänden, Küchen,
+    nichttragenden Wänden usw.
+it:
+  title: Piccole demolizioni
+  summary: Rimozione di rivestimenti e pareti non portanti.
+  description: >-
+    Nell'ambito delle ristrutturazioni eseguiamo piccole demolizioni come la rimozione di moquette,
+    parquet, linoleum o piastrelle e la demolizione di tramezzi, cucine, muri non portanti, ecc.

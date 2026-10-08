@@ -1,0 +1,32 @@
+order: 1
+images:
+  - src: ../../assets/services/fourniture_pose_carrelage_2.jpg
+  - src: ../../assets/services/fourniture_pose_carrelage_1.jpg
+  - src: ../../assets/services/image_work_1.jpg
+fr:
+  title: Fourniture et pose de carrelage
+  summary: Notre cœur de métier, tous formats, sol et murs.
+  description: >-
+    Depuis le choix du carrelage jusqu'à la fin des travaux, nous restons à vos côtés afin que
+    notre expérience puisse vous guider dans vos choix. La pose de carrelage étant notre activité
+    principale, nous sommes en mesure de poser tout type de format.
+en:
+  title: Tile supply and installation
+  summary: Our core trade, all formats, floors and walls.
+  description: >-
+    From choosing the tiles to the end of the works, we stay by your side so that our experience
+    can guide your decisions. Tiling is our main activity and we can lay any format.
+de:
+  title: Lieferung und Verlegung von Plattenbelägen
+  summary: Unser Kerngeschäft, alle Formate, Boden und Wand.
+  description: >-
+    Von der Auswahl der Platten bis zum Abschluss der Arbeiten begleiten wir Sie, damit unsere
+    Erfahrung Ihnen bei Ihren Entscheidungen hilft. Das Verlegen von Platten ist unsere
+    Haupttätigkeit; wir verlegen jedes Format.
+it:
+  title: Fornitura e posa di piastrelle
+  summary: La nostra attività principale, tutti i formati, pavimenti e pareti.
+  description: >-
+    Dalla scelta delle piastrelle fino alla fine dei lavori restiamo al vostro fianco, affinché la
+    nostra esperienza possa guidarvi nelle vostre scelte. La posa di piastrelle è la nostra
+    attività principale e siamo in grado di posare qualsiasi formato.

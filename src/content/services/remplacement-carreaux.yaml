@@ -1,0 +1,34 @@
+order: 5
+images:
+  - src: ../../assets/services/remplacement_de_carreaux.jpg
+fr:
+  title: Remplacement de carreaux
+  summary: Réparation ponctuelle, la plus discrète possible.
+  description: >-
+    Lors d'une réparation de conduite, d'un carrelage cassé ou à la suite d'un assèchement de
+    pièces, il faut prévoir une réparation ponctuelle sur un ou plusieurs carreaux. Nous pouvons
+    remplacer ces carreaux si vous avez une réserve ; à l'inverse, nous trouverons une solution
+    alternative afin que cela soit le plus discret possible et à votre goût.
+en:
+  title: Tile replacement
+  summary: Spot repairs, as discreet as possible.
+  description: >-
+    After a pipe repair, a broken tile or the drying-out of a room, one or more tiles may need a
+    spot repair. We can replace them if you have spare tiles; otherwise we will find an alternative
+    solution that is as discreet as possible and to your taste.
+de:
+  title: Plattenersatz
+  summary: Punktuelle Reparatur, so unauffällig wie möglich.
+  description: >-
+    Nach einer Leitungsreparatur, bei einer gebrochenen Platte oder nach der Trocknung von Räumen
+    ist eine punktuelle Reparatur an einer oder mehreren Platten nötig. Wir ersetzen diese Platten,
+    wenn Sie Reserveplatten haben; andernfalls finden wir eine möglichst unauffällige Alternative
+    nach Ihrem Geschmack.
+it:
+  title: Sostituzione di piastrelle
+  summary: Riparazione puntuale, il più discreta possibile.
+  description: >-
+    In seguito alla riparazione di una conduttura, a una piastrella rotta o all'asciugatura di
+    locali, è necessario prevedere una riparazione puntuale su una o più piastrelle. Possiamo
+    sostituirle se avete una scorta; in caso contrario troveremo una soluzione alternativa il più
+    discreta possibile e di vostro gusto.

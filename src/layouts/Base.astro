@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { languages, useTranslations, type Lang } from '../i18n/ui';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const canonical = getAbsoluteLocaleUrl(lang, '');
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t('meta.title')}</title>
+    <meta name="description" content={t('meta.description')} />
+    <meta name="theme-color" content="#d38620" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+    {Object.keys(languages).map((l) => (
+      <link rel="alternate" hreflang={l} href={getAbsoluteLocaleUrl(l, '')} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl('fr', '')} />
+    <meta property="og:title" content={t('meta.title')} />
+    <meta property="og:description" content={t('meta.description')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og.jpg', Astro.site)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Nav lang={lang} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

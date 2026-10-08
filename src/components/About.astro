@@ -1,0 +1,42 @@
+---
+import { useTranslations, type Lang } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const points = [1, 2, 3] as const;
+const icons = [
+  '<path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>',
+  '<path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/>',
+  '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+];
+---
+<section class="section about" id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{t('nav.about')}</span>
+      <h2>{t('about.title')}</h2>
+      <p>{t('about.text')}</p>
+    </div>
+    <ul class="points">
+      {points.map((n, i) => (
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={icons[i]} />
+          <h3>{t(`about.point${n}.title`)}</h3>
+          <p>{t(`about.point${n}.text`)}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .about { background: var(--brand); color: #fff; }
+  .about .kicker { color: #fff; }
+  .about .kicker::before { background: #fff; }
+  .about .section-head p { color: rgb(255 255 255 / .9); }
+  .points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+  .points li { background: rgb(255 255 255 / .12); border: 1px solid rgb(255 255 255 / .2); border-radius: var(--radius); padding: 1.5rem; }
+  .points svg { width: 32px; height: 32px; margin-bottom: .9rem; }
+  .points h3 { font-size: 1.15rem; margin-bottom: .4rem; }
+  .points p { color: rgb(255 255 255 / .88); }
+</style>

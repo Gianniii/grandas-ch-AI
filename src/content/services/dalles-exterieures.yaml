@@ -1,0 +1,32 @@
+order: 3
+images:
+  - src: ../../assets/services/dale_sur_taquet_1.jpg
+  - src: ../../assets/services/dale_sur_taquet_2.jpg
+fr:
+  title: Dalles extérieures sur taquets
+  summary: Terrasses de niveau avec vide technique ventilé.
+  description: >-
+    Une solution de plus en plus prisée du fait que les taquets ont une bonne résistance et
+    permettent un vide technique/ventilation, par exemple pour passer des câbles électriques, des
+    tuyaux d'eau, ou simplement pour être de niveau avec l'espace intérieur.
+en:
+  title: Outdoor slabs on pedestals
+  summary: Level terraces with a ventilated service void.
+  description: >-
+    An increasingly popular solution: pedestals are highly resistant and leave a service void with
+    ventilation, for example to run electrical cables or water pipes, or simply to sit level with
+    the indoor floor.
+de:
+  title: Aussenplatten auf Stelzlagern
+  summary: Ebene Terrassen mit belüftetem Hohlraum.
+  description: >-
+    Eine immer beliebtere Lösung: Stelzlager sind sehr belastbar und schaffen einen belüfteten
+    Hohlraum, zum Beispiel für Elektrokabel oder Wasserleitungen, oder einfach, um niveaugleich mit
+    dem Innenraum zu sein.
+it:
+  title: Lastre esterne su supporti
+  summary: Terrazze a livello con intercapedine ventilata.
+  description: >-
+    Una soluzione sempre più apprezzata: i supporti sono molto resistenti e creano un'intercapedine
+    tecnica ventilata, ad esempio per far passare cavi elettrici o tubi dell'acqua, oppure
+    semplicemente per essere a livello con lo spazio interno.
