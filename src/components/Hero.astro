@@ -15,6 +15,7 @@ const home = getRelativeLocaleUrl(lang, '');
 <section class="hero">
   <div class="container grid">
     <div class="copy">
+      <span class="kicker">{t('hero.kicker')}</span>
       <h1>{t('hero.title')}</h1>
       <p>{t('hero.text')}</p>
       <div class="actions">
@@ -35,7 +36,7 @@ const home = getRelativeLocaleUrl(lang, '');
 <style>
   .hero { padding-block: clamp(3rem, 8vw, 6rem) clamp(3rem, 8vw, 5rem); overflow: hidden; }
   .grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
-  h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); font-weight: 700; }
+  h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); margin-top: 1rem; font-weight: 700; }
   .copy p { margin-top: 1.25rem; font-size: 1.15rem; color: var(--ink-2); max-width: 36rem; }
   .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
   .phone { display: inline-block; margin-top: 1.25rem; font-weight: 600; color: var(--brand-dark); text-decoration: none; }

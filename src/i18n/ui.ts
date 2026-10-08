@@ -12,6 +12,7 @@ export const ui = {
     'nav.contact': 'Contact',
     'nav.menu': 'Menu',
     'nav.language': 'Langue',
+    'hero.kicker': 'Carrelage · Joints silicone · Rénovation',
     'hero.title': 'Carrelage & rénovation, avec le soin du détail.',
     'hero.text':
       "Pose de carrelage, joints silicone, dalles extérieures et petites rénovations dans la région lausannoise. Un interlocuteur unique, du conseil à la finition.",
@@ -58,6 +59,7 @@ export const ui = {
     'nav.contact': 'Contact',
     'nav.menu': 'Menu',
     'nav.language': 'Language',
+    'hero.kicker': 'Tiling · Silicone joints · Renovation',
     'hero.title': 'Tiling & renovation, with care for every detail.',
     'hero.text':
       'Tile installation, silicone joints, outdoor slabs and small renovations around Lausanne. One point of contact, from advice to finishing.',
@@ -104,6 +106,7 @@ export const ui = {
     'nav.contact': 'Kontakt',
     'nav.menu': 'Menü',
     'nav.language': 'Sprache',
+    'hero.kicker': 'Platten · Silikonfugen · Renovation',
     'hero.title': 'Platten & Renovation, mit Liebe zum Detail.',
     'hero.text':
       'Plattenverlegung, Silikonfugen, Aussenplatten und kleine Renovationen in der Region Lausanne. Ein Ansprechpartner, von der Beratung bis zur Fertigstellung.',
@@ -150,6 +153,7 @@ export const ui = {
     'nav.contact': 'Contatto',
     'nav.menu': 'Menu',
     'nav.language': 'Lingua',
+    'hero.kicker': 'Piastrelle · Giunti in silicone · Ristrutturazioni',
     'hero.title': 'Piastrelle & ristrutturazioni, con cura per ogni dettaglio.',
     'hero.text':
       'Posa di piastrelle, giunti in silicone, lastre esterne e piccole ristrutturazioni nella regione di Losanna. Un unico interlocutore, dalla consulenza alla finitura.',
