@@ -18,7 +18,7 @@ const canonical = getAbsoluteLocaleUrl(lang, '');
     <title>{t('meta.title')}</title>
     <meta name="description" content={t('meta.description')} />
     <meta name="theme-color" content="#d38620" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}/favicon.svg`.replace(/\/\/+/g, "/")} type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
     {Object.keys(languages).map((l) => (
       <link rel="alternate" hreflang={l} href={getAbsoluteLocaleUrl(l, '')} />

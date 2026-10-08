@@ -15,6 +15,11 @@ jobs:
       - uses: withastro/action@v3
         with:
           node-version: 20
+        env:
+          # Preview under the repository URL. Once www.grandas.ch points to this
+          # repo (Settings → Pages → Custom domain), delete these two lines.
+          SITE: https://gianniii.github.io
+          BASE: /grandas-ch-AI
   deploy:
     needs: build
     runs-on: ubuntu-latest
