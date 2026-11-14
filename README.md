@@ -50,11 +50,11 @@ it: { ... }
 
 ### 2. Coordonnées – `src/data/site.ts`
 
-Nom, adresse, téléphone, e-mail, horaires, slogan par langue et l'adresse du formulaire de contact (Formspree).
+Nom, adresse, téléphone, numéro WhatsApp, e-mail, horaires, zone d'intervention (`areas`), slogan par langue et l'adresse du formulaire de contact (Formspree).
 
 ### 3. Textes de l'interface – `src/i18n/ui.ts`
 
-Tous les titres, boutons, textes de la page d'accueil, de la section « Qui sommes-nous » et du formulaire, pour chaque langue.
+Tous les titres, boutons, textes de la page d'accueil, des sections « Qui sommes-nous » et « Comment ça se passe ? » et du formulaire, pour chaque langue.
 Pour ajouter une langue : l'ajouter dans `languages` et `ui`, dans `astro.config.mjs` (`i18n.locales`), puis dans `tagline`/`hours` de `site.ts` et dans chaque YAML de prestation.
 
 ## Structure
@@ -67,11 +67,13 @@ src/
   data/site.ts         coordonnées de l'entreprise
   i18n/ui.ts           traductions de l'interface
   layouts/Base.astro   <head>, SEO, hreflang, polices
-  components/          Nav, Hero, Services (cartes + galerie lightbox), About, Contact, Footer
+  components/          Nav, Hero, Services (cartes + galerie lightbox), About,
+                       Process (« Comment ça se passe ? »), Contact, Footer
   pages/index.astro    page française (racine)
   pages/[lang]/        pages en / de / it
 public/                logo, favicon, CNAME
 scripts/resize.mjs     utilitaire pour réduire les photos
+.claude/skills/        instructions pour Claude Code (skill edit-site)
 ```
 
 ## Formulaire de contact
