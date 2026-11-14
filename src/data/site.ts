@@ -5,6 +5,8 @@ export const site = {
   owner: 'Grandas Michael',
   address: ['Case Postale 33', '1032 Romanel-sur-Lausanne'],
   region: 'Lausanne',
+  // Service area shown in the "Qui sommes-nous" section (place names, not translated).
+  areas: ['Lausanne', 'Romanel-sur-Lausanne', 'Cheseaux-sur-Lausanne', 'Le Mont-sur-Lausanne', 'Morges', 'Gros-de-Vaud'],
   phone: '079 631 56 19',
   phoneHref: 'tel:+41796315619',
   email: 'info@grandas.ch',

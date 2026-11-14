@@ -1,5 +1,6 @@
 ---
 import { useTranslations, type Lang } from '../i18n/ui';
+import { site } from '../data/site';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
@@ -26,6 +27,16 @@ const icons = [
         </li>
       ))}
     </ul>
+    <div class="area">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        {t('area.title')}
+      </h3>
+      <ul class="places">
+        {site.areas.map((p) => <li>{p}</li>)}
+        <li class="all">{t('area.more')}</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -39,4 +50,15 @@ const icons = [
   .points svg { width: 32px; height: 32px; margin-bottom: .9rem; }
   .points h3 { font-size: 1.15rem; margin-bottom: .4rem; }
   .points p { color: rgb(255 255 255 / .88); }
+
+  .area {
+    margin-top: 1.25rem; padding: 1.5rem; border-radius: var(--radius);
+    background: rgb(255 255 255 / .12); border: 1px solid rgb(255 255 255 / .2);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem;
+  }
+  .area h3 { display: inline-flex; align-items: center; gap: .6rem; font-size: 1.15rem; }
+  .area h3 svg { width: 28px; height: 28px; flex: none; }
+  .places { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+  .places li { background: #fff; color: var(--ink); padding: .4rem .95rem; border-radius: 999px; font-weight: 600; font-size: .95rem; }
+  .places .all { background: transparent; color: #fff; border: 1.5px dashed rgb(255 255 255 / .7); }
 </style>
