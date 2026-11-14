@@ -1,9 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// SITE and BASE can be overridden by the deploy workflow, e.g. to publish a
-// preview under https://gianniii.github.io/grandas-ch-AI/ before the custom
-// domain is moved to this repository.
+// The site is served from https://www.grandas.ch/. SITE and BASE can be
+// overridden at build time, e.g. to publish a preview under a sub-path.
 export default defineConfig({
   site: process.env.SITE ?? 'https://www.grandas.ch',
   base: process.env.BASE ?? '/',
