@@ -2,9 +2,11 @@
 import { getAbsoluteLocaleUrl } from 'astro:i18n';
 import { useTranslations, type Lang } from '../i18n/ui';
 import { site } from '../data/site';
+import WhatsAppIcon from './WhatsAppIcon.astro';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const whatsapp = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(t('contact.whatsappText'))}`;
 const next = `${getAbsoluteLocaleUrl(lang, '')}?sent=1#contact`;
 ---
 <section class="section" id="contact">
@@ -35,6 +37,12 @@ const next = `${getAbsoluteLocaleUrl(lang, '')}?sent=1#contact`;
         <dd>{site.owner}<br />{site.address.map((l) => <>{l}<br /></>)}</dd>
         <dt>{t('contact.phoneLabel')}</dt>
         <dd><a href={site.phoneHref}>{site.phone}</a></dd>
+        <dt>{t('contact.whatsappLabel')}</dt>
+        <dd>
+          <a class="btn btn-ghost wa" href={whatsapp} target="_blank" rel="noopener">
+            <WhatsAppIcon />{t('contact.whatsapp')}
+          </a>
+        </dd>
         <dt>{t('contact.emailLabel')}</dt>
         <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
         <dt>{t('contact.hours')}</dt>
@@ -60,6 +68,9 @@ const next = `${getAbsoluteLocaleUrl(lang, '')}?sent=1#contact`;
   dd { margin: 0; line-height: 1.7; }
   dd a { text-decoration: none; font-weight: 600; color: var(--brand-dark); }
   dd a:hover { text-decoration: underline; }
+  dd a.wa { margin-top: .35rem; color: var(--ink); padding: .6rem 1.1rem; }
+  dd a.wa:hover { text-decoration: none; }
+  .wa :global(svg) { width: 1.35em; height: 1.35em; }
   @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .info { position: static; } }
 </style>
 

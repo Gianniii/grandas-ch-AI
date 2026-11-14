@@ -9,6 +9,8 @@ export const site = {
   areas: ['Lausanne', 'Romanel-sur-Lausanne', 'Cheseaux-sur-Lausanne', 'Le Mont-sur-Lausanne', 'Morges', 'Gros-de-Vaud'],
   phone: '079 631 56 19',
   phoneHref: 'tel:+41796315619',
+  // WhatsApp number in international format, digits only (used for wa.me links).
+  whatsapp: '41796315619',
   email: 'info@grandas.ch',
   hours: { fr: 'Lu–Ve 8h00–12h00 et 13h30–17h00', en: 'Mon–Fri 8:00–12:00 and 13:30–17:00', de: 'Mo–Fr 8:00–12:00 und 13:30–17:00', it: 'Lun–Ven 8:00–12:00 e 13:30–17:00' },
   // Contact form endpoint (Formspree). Log in to Formspree to change the destination e-mail.

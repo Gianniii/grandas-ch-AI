@@ -1,9 +1,12 @@
 ---
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { useTranslations, type Lang } from '../i18n/ui';
+import { site } from '../data/site';
+import WhatsAppIcon from './WhatsAppIcon.astro';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const whatsapp = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(t('contact.whatsappText'))}`;
 const home = getRelativeLocaleUrl(lang, '');
 const steps = [1, 2, 3, 4] as const;
 const icons = [
@@ -42,6 +45,7 @@ const icons = [
 
     <div class="cta">
       <a class="btn btn-primary" href={`${home}#contact`}>{t('hero.cta')}</a>
+      <a class="btn btn-ghost wa" href={whatsapp} target="_blank" rel="noopener"><WhatsAppIcon />{t('contact.whatsapp')}</a>
     </div>
   </div>
 </section>
@@ -65,6 +69,7 @@ const icons = [
   .num { font-family: var(--font-head); font-weight: 700; font-size: .9rem; letter-spacing: .1em; color: var(--brand-dark); }
   .step h3 { font-size: 1.25rem; margin-top: .25rem; }
   .step p { margin-top: .5rem; color: var(--ink-2); }
+  .wa :global(svg) { width: 1.35em; height: 1.35em; }
   .cta { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
 
   @media (max-width: 900px) {
