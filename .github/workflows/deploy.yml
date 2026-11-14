@@ -21,11 +21,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          # Preview under the repository URL. Once www.grandas.ch points to this
-          # repo (Settings → Pages → Custom domain), delete these two lines.
-          SITE: https://gianniii.github.io
-          BASE: /grandas-ch-AI
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
