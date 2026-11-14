@@ -1,0 +1,76 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslations, type Lang } from '../i18n/ui';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const home = getRelativeLocaleUrl(lang, '');
+const steps = [1, 2, 3, 4] as const;
+const icons = [
+  // contact: speech bubble
+  '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/>',
+  // on-site visit: house
+  '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  // free quote: document
+  '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/>',
+  // works: tiles
+  '<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/>',
+];
+---
+<section class="section process" id="deroulement">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{t('process.kicker')}</span>
+      <h2>{t('process.title')}</h2>
+      <p>{t('process.lead')}</p>
+    </div>
+
+    <ol class="steps">
+      {steps.map((n, i) => (
+        <li class="step">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" set:html={icons[i]} />
+          </span>
+          <div class="text">
+            <span class="num">{String(n).padStart(2, '0')}</span>
+            <h3>{t(`process.step${n}.title`)}</h3>
+            <p>{t(`process.step${n}.text`)}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    <div class="cta">
+      <a class="btn btn-primary" href={`${home}#contact`}>{t('hero.cta')}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process { background: var(--card); border-block: 1px solid var(--line); }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .step { position: relative; }
+  /* dashed connector from this step's icon to the next one */
+  .step:not(:last-child)::after {
+    content: ''; position: absolute; top: 31px; left: calc(64px + .75rem); right: -.75rem;
+    border-top: 2px dashed rgb(211 134 32 / .35);
+  }
+  .icon {
+    position: relative; z-index: 1; width: 64px; height: 64px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--brand); color: #fff;
+    box-shadow: 0 0 0 7px var(--brand-soft);
+  }
+  .icon svg { width: 28px; height: 28px; }
+  .text { margin-top: 1.5rem; }
+  .num { font-family: var(--font-head); font-weight: 700; font-size: .9rem; letter-spacing: .1em; color: var(--brand-dark); }
+  .step h3 { font-size: 1.25rem; margin-top: .25rem; }
+  .step p { margin-top: .5rem; color: var(--ink-2); }
+  .cta { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+
+  @media (max-width: 900px) {
+    .steps { grid-template-columns: 1fr; gap: 2rem; }
+    .step { display: grid; grid-template-columns: 64px 1fr; gap: 1.25rem; }
+    .step:not(:last-child)::after { top: calc(64px + .75rem); bottom: calc(-2rem + .75rem); left: 31px; right: auto; border-top: 0; border-left: 2px dashed rgb(211 134 32 / .35); }
+    .text { margin-top: .35rem; }
+  }
+</style>
