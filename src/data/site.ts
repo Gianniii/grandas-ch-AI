@@ -6,7 +6,8 @@ export const site = {
   address: ['Case Postale 33', '1032 Romanel-sur-Lausanne'],
   region: 'Lausanne',
   // Service area shown in the "Qui sommes-nous" section (place names, not translated).
-  areas: ['Lausanne', 'Romanel-sur-Lausanne', 'Cheseaux-sur-Lausanne', 'Le Mont-sur-Lausanne', 'Morges', 'Gros-de-Vaud'],
+  // Lausanne first (home market), then the main towns of Vaud, then the other cantons' main cities.
+  areas: ['Lausanne', 'Morges', 'Vevey', 'Montreux', 'Yverdon-les-Bains', 'Genève', 'Fribourg', 'Neuchâtel', 'Sion'],
   phone: '079 631 56 19',
   phoneHref: 'tel:+41796315619',
   // WhatsApp number in international format, digits only (used for wa.me links).
